@@ -1,2 +1,3 @@
-# portfolio
-Source code for portfolio projects
+# Portfolio Repository
+Source code for my portfolio projects.
+ 

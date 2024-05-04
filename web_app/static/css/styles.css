@@ -1,0 +1,159 @@
+:root {
+    /*--primary-color: #007aff; /* Apple's default blue */
+    --primary-color:#ffcf33; /* Apple's default yellow */
+    --text-color: #1d1d1f;
+    --background-color: #f5f5f7; /* Light background for light mode */
+    --background-color-dark: #000; /* Dark background for dark mode */
+    --border-color: #c6c6c8;
+    --link-color-dark: rgb(255, 233, 93);
+    --link-color-light: rgb(0, 122, 255);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--background-color);
+    background-color: var(--background-color-dark);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+a {
+  color:  var(--link-color-dark);
+  text-decoration: none;
+}
+
+
+.container {
+    width: 60%;
+    margin: auto;
+    max-width: 1023px;
+}
+
+header {
+    background: linear-gradient(to left, var(--primary-color), #ffe95d);
+    color: var(--text-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+button, input[type="submit"] {
+    background: linear-gradient(to left, var(--primary-color), #ffe95d);
+    border: none;
+    color: var(--text-color);
+    padding: 0.75em 1.5em;
+    border-radius: 13px; /* Rounded corners as per Apple's style */
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover, input[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* styles.css */
+#chat-box {
+  background-color: var(--border-color);
+  padding: 10px;
+  border-radius: 13px;
+}
+
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.element-to-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: all 0.3s ease-out;
+  }
+  
+  .hamburger-menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #fff; /* Light color for the bars */
+    transition: all 0.3s ease-out;
+  }
+  
+  /* Adding transform to the X */
+  .hamburger-menu.close {
+    transform: rotate(180deg);
+  }
+
+  /* Styling the three lines to make it an X */
+  .hamburger-menu.close .bar:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  .hamburger-menu.close .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.close .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(1.5px, -1px);
+  }
+
+  /* Navigation Menu */
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hide menu off-screen */
+    width: 250px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(19, 19, 21, 0.7); /* Semi-transparent background color */
+    backdrop-filter: blur(5px); /* Apply the blur effect */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+  }
+  
+  #nav-menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  #nav-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff; /* Light text color for readability */
+    border-bottom: 1px solid #343436; /* Slightly lighter border color for subtle contrast */
+  }
+  
+  /* Show menu when .active is added to the menu */
+  #nav-menu.active {
+    right: 0; /* Bring menu on-screen */
+  }
+
+  /* Page Content */
+  div[id^="section"] {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  

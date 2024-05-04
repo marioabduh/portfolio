@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Python Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+</head>
+<body>    
+    <header>
+        <div class="container">
+            <h1>My Python Project</h1>
+            <p>A story of my journey to discover more about python.</p>
+        </div>
+    </header>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <ul>
+        <li><a href="/">Project Overview</a></li>
+        <li><a href="/prayer_time">Today's Prayer Time Schedule Checker</a></li>
+        <!-- Add more sections as needed -->
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <strong>
+                Ever wondered how to boost your habit?
+            </strong>
+            That's the question that sparked my latest project. Armed with Python and a thirst for self-improvement, I dove in.
+            <br>
+            <br>
+            Starting with a blank screen, I pieced together code bit by bit. But when roadblocks appeared, I turned to trusty allies: Google, ChatGPT, Copilot, and YouTube. Slowly but surely, my project took shape—a testament to persistence and the power of learning. And though it's just the beginning, each project is a step forward in refining my skills.
+            <br>
+            <br>
+            <strong>
+                Note that this step is only the beginning.
+            </strong>
+            Join me on this journey of exploration and growth, one line of code at a time.
+            <!-- Add images, videos, or other content to showcase your project -->
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>List of Projects</h2>
+            <ol>
+                <li>
+                    <a href="/prayer_time">Today's Prayer Time Schedule Checker</a>
+                </li>
+
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <!-- Add more features as needed -->
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Connect with me: <a href="https://www.linkedin.com/in/mariomuhammadadbduh/">Linked In</a> | <a href="#">GitHub</a></p>
+        </div>
+    </footer>
+    <!-- Include this at the bottom of your HTML file -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

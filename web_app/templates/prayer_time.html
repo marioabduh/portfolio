@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Python Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+</head>
+<body>    
+    <header>
+        <div class="container">
+            <h1>My Python Project</h1>
+            <p>A brief description of my awesome project.</p>
+        </div>
+    </header>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="/">Project Overview</a></li>
+            <li><a href="/prayer_time">Today's Prayer Time Schedule Checker</a></li>
+        <!-- Add more sections as needed -->
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <div class="container">
+            <h2>Today's Prayer Time Schedule Checker</h2>
+            <strong>
+                Do you want to improve your prayer habit?
+            </strong>
+            With just an idea that it will improve myself in the long-run, i started this project. The objective was clear, I want to be aware of today's prayer time then adjust my work schedule accordingly.
+            <br>
+            <br>
+            <strong>
+                But I don't stop there.
+            </strong>
+            I then try to calculate much closer the current time versus the closest prayer time. It just give me the time finish my work before the break. Here is how I do it.
+            <br>
+            Note: I use muslimpro for this example
+            <br>
+            <div id="chat-box">
+                <div class="code-box">
+                    <button class="copy-button" onclick="copyToClipboard('feature1-code')">Copy</button>
+                    <pre><code id="feature1-code" class="language-python">
+    # import libraries to scrape data and formatting date and time
+    import requests
+    from bs4 import BeautifulSoup
+    from datetime import datetime
+
+    # scrape prayer time for today from web and store it in a list.
+    def get_prayer_times(url):
+        # Send a GET request to the URL
+        response = requests.get(url)
+
+        # check if the request was successful
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            # find the prayer time table
+            prayer_times_table = soup.find('table', class_='prayer-times')
+            
+            # extract the prayer times for today
+            current_date = datetime.now().strftime('%a %-d %b')
+            today_prayer_times = []
+            rows = prayer_times_table.find_all('tr')
+                for row in rows:
+                if row[0] == current_date:
+                    today_prayer_times.append(row)
+        
+        else:
+            "Failed to retrieve data. Check your internet connection or URL."
+
+        return today_prayer_times
+
+    # and it's done. I've got the data that I need. Then tailor the output to my liking.
+                        </code></pre>
+                </div>
+            </div>
+            <!-- Add images, videos, or other content to showcase your project -->
+        </div>
+        <br>
+        <div class="container">
+            <button class="try-button" onclick="window.location.href = '/prayer_time_app'">
+                Output Example!
+            </button>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Connect with me: <a href="https://www.linkedin.com/in/mariomuhammadadbduh/">Linked In</a> | <a href="#">GitHub</a></p>
+        </div>
+    </footer>
+    <!-- Include this at the bottom of your HTML file -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+    
+    
+    <script>
+        function copyToClipboard(id) {
+            var code = document.getElementById(id);
+            var textarea = document.createElement('textarea');
+            textarea.value = code.textContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Code copied to clipboard!');
+        }
+    </script>
+<!-- Initialize Prism.js -->
+<script>Prism.highlightAll();</script>
+</body>
+</html>

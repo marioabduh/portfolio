@@ -104,7 +104,7 @@ def different_time(today_prayer_times,current_time):
 
 # Google Colab Project
 @app.route('/google_colab')
-def index():
+def google_colab():
     return render_template('google_colab.html')
 
 # Run Flask App

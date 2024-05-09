@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Python Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>    
+    <header>
+        <div class="container">
+            <h1>My Python Project</h1>
+            <p>A brief description of my awesome project.</p>
+        </div>
+    </header>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="/">Project Overview</a></li>
+            <li><a href="/google_colab">Utilizing Google Colab to Access and Edit Files in GDrive</a></li>
+            <li><a href="/prayer_time">Today's Prayer Time Schedule Checker</a></li>
+        <!-- Add more sections as needed -->
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <div class="container">
+            <h2>Utilizing Google Colab to Access and Edit Files in GDrive</h2>
+            <strong>
+                Do you find yourself grappling with hefty CSV files stored in Google Drive?
+            </strong>
+            As a data enthusiast, I have been there too. Those files, brimming with IDs and information, can be a real headache—slow to open, memory-hungry, and sometimes downright crash-prone.
+            <br>
+            <br>
+            <strong>
+                But fear not! Google Colab comes to the rescue.
+            </strong>
+            Here are two strategies to tackle those colossal CSVs:
+            <ol>
+                <li>
+                    <strong>
+                        Pandas Magic: 
+                    </strong>
+                    Use the mighty pandas library to process your data. But beware—loading the entire file into memory might lead to a memory meltdown. Instead, try reading the file in chunks, applying filters, and gradually working your way through it. Then, stitch those chunks together using "pd.concat".
+                </li>
+                <li>
+                    <strong>
+                        Slice and Dice:
+                    </strong>
+                    If pandas isn not your jam, consider slicing your CSV into smaller, more manageable pieces. Think of it as breaking a giant chocolate bar into bite-sized chunks. You will find it easier to work with—and your Colab session will thank you!
+                </li>
+            </ol>
+            <br>
+            Ready to dive in? Check out my example here <a href="https://colab.research.google.com/github/marioabduh/portfolio/blob/main/CSV_Splitter_from_GDrive.ipynb">Google Colab Example</a>.
+            <br>
+            <br>
+            Remember, whether you are wrangling data or savoring chocolate, small bites lead to big wins!
+            <br>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Connect with me: <a href="https://www.linkedin.com/in/mariomuhammadadbduh/">Linked In</a> | <a href="https://github.com/marioabduh">GitHub</a></p>
+        </div>
+    </footer>
+    <!-- Include this at the bottom of your HTML file -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
